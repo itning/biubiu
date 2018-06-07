@@ -5,15 +5,18 @@ import sl.itcast.entity.Board;
 import sl.itcast.factory.BeanFactory;
 import sl.itcast.service.IBoardServise;
 
-import javax.swing.border.Border;
 import java.util.List;
 
+/**
+ * @author 舒露
+ */
 public class BoardService implements IBoardServise {
     private BoardDao boardDao;
 
     public BoardService() {
         boardDao = BeanFactory.getInstance("BoardDao", BoardDao.class);
     }
+
     @Override
     public List<Board> FindBoardList() {
         return boardDao.FindBoardList();
@@ -21,7 +24,7 @@ public class BoardService implements IBoardServise {
 
     @Override
     public void add(Board board) {
-
+        boardDao.add(board);
     }
 
     @Override
@@ -30,13 +33,14 @@ public class BoardService implements IBoardServise {
     }
 
     @Override
-    public void updata(Border border) {
+    public void updata(Board board) {
+        boardDao.updata(board);
 
     }
 
     @Override
-    public Border FindBoarderById(String id) {
-        return null;
+    public Board FindBoarderById(String id) {
+        return boardDao.FindBoarderById(id);
     }
 
     @Override

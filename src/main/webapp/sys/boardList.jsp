@@ -60,7 +60,7 @@
                 <td align="center">${board.tableStatus==1?"已预订":"未预订"}</td>
                 <td align="center">${board.orderData}</td>
                 <td>
-                    <a href="/wirelessplatform/board.html?method=update&id=1&isBook=0" class="FunctionButton">退桌</a>
+                    <a href="/UpdataStatusServlet&id=${board.id}" class="FunctionButton">退桌</a>
                     <a href="/wirelessplatform/board.html?method=delete&id=1" onClick="return delConfirm();"
                        class="FunctionButton">删除</a>
                 </td>
@@ -72,7 +72,7 @@
 
     <!-- 其他功能超链接 -->
     <div id="TableTail" align="center">
-        <div class="FunctionButton"><a href="saveBoard.html">添加</a></div>
+        <div class="FunctionButton"><a href="/sys/saveBoard.jsp">添加</a></div>
     </div>
 </div>
 </body>
