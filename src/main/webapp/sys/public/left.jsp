@@ -98,7 +98,7 @@
         </div>
         <ul class="MenuLevel2">
             <li class="level2 level2Style">
-                <a target="right" href="/sys/boardList.jsp">餐桌管理</a>
+                <a target="right" href="/BoardListServlet">餐桌管理</a>
             </li>
             <li class="level2 level2Style">
                 <a target="right" href="/CuisineListServlet">菜系管理</a>
