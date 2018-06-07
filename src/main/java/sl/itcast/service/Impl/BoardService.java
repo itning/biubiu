@@ -29,7 +29,7 @@ public class BoardService implements IBoardServise {
 
     @Override
     public void delect(String id) {
-
+        boardDao.delect(id);
     }
 
     @Override

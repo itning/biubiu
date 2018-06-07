@@ -60,8 +60,8 @@
                 <td align="center">${board.tableStatus==1?"已预订":"未预订"}</td>
                 <td align="center">${board.orderData}</td>
                 <td>
-                    <a href="/UpdataStatusServlet&id=${board.id}" class="FunctionButton">退桌</a>
-                    <a href="/wirelessplatform/board.html?method=delete&id=1" onClick="return delConfirm();"
+                    <a href="/UpdataStatusServlet?id=${board.id}" class="FunctionButton">退桌</a>
+                    <a href="/DelectServlet?id=1" onClick="return delConfirm();"
                        class="FunctionButton">删除</a>
                 </td>
             </tr>

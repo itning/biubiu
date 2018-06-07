@@ -36,6 +36,12 @@ public class BoardDao implements IBoardDao {
 
     @Override
     public void delect(String id) {
+        try {
+            String sql="DELETE FROM dinnertable WHERE id=?";
+            JdbcUtils.getQuerrRunner().update(sql,id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
