@@ -1,5 +1,7 @@
 package sl.itcast.servlet.frontend;
 
+import sl.itcast.entity.OrderDetail;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +21,8 @@ public class ClientCartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        OrderDetail orderDetail = new OrderDetail();
+        String id = request.getParameter("id");
 
     }
 }

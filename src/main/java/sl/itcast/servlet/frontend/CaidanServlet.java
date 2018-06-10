@@ -1,6 +1,7 @@
 package sl.itcast.servlet.frontend;
 
 import sl.itcast.entity.Food;
+import sl.itcast.entity.OrderDetail;
 import sl.itcast.factory.BeanFactory;
 import sl.itcast.service.Impl.FoodService;
 
@@ -11,10 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**

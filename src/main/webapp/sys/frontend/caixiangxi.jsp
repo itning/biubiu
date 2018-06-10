@@ -5,9 +5,6 @@
 	<!-- 包含公共的JSP代码片段 -->
 	
 <title>无线点餐平台</title>
-
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="/sys/frontendStyle/js/jquery.js"></script>
 <script type="text/javascript" src="/sys/frontendStyle/js/page_common.js"></script>
@@ -36,7 +33,7 @@
 			</div>
 			<div class="menu4">
 				
-				<a href="/ClientCartServlet" style="background:url(/sys/frontendStyle/images/img/order_left_corner_bg.png);">放入餐车</a>
+				<a href="/ClientCartServlet?${food.id}" style="background:url(/sys/frontendStyle/images/img/order_left_corner_bg.png);">放入餐车</a>
 				<a href="#" onclick="javascript:history.go(-1);" style="background:url(/sys/frontendStyle/images/img/order_right_corner_bg.png);">返回</a>
 			</div>
 		</div>
@@ -56,7 +53,6 @@
 
 			<div id="dish_2">
 				<ul>
-					
 						<li>
 							<a href="caidan.html">粤菜</a>
 						</li>
@@ -72,7 +68,6 @@
 						<li>
 							<a href="chuancai.html">东北菜</a>
 						</li>
-					
 				</ul>
 			</div>
 			<div id="dish_3">
