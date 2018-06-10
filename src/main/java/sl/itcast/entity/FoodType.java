@@ -8,10 +8,8 @@ package sl.itcast.entity;
  */
 public class FoodType {
 
-    private String id;//-- 类别主键
-    private String typeName;// -- 类别名称
-
-
+    private String id;
+    private String typeName;
     public String getId() {
         return id;
     }
@@ -24,6 +22,4 @@ public class FoodType {
     public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-
-
 }

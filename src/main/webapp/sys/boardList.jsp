@@ -29,7 +29,7 @@
 
 <!-- 过滤条件 -->
 <div id="QueryArea">
-    <form action="/wirelessplatform/board.html" method="get">
+    <form action="/queryServlet" method="get">
         <input type="hidden" name="method" value="search">
         <input type="text" name="keyword" title="请输入餐桌名称">
         <input type="submit" value="搜索">

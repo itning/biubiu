@@ -4,6 +4,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import sl.itcast.dao.oracle_impl.IBoardDao;
 import sl.itcast.entity.Board;
+import sl.itcast.entity.Food;
 import sl.itcast.util.JdbcUtils;
 
 import java.sql.SQLException;
@@ -54,7 +55,6 @@ public class BoardDao implements IBoardDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -76,6 +76,12 @@ public class BoardDao implements IBoardDao {
 
     @Override
     public List<Board> query(String keyword) {
+        String sql = "select * from dinnertable where tableName like ?";
+        try {
+            return JdbcUtils.getQuerrRunner().query(sql, new BeanListHandler<Board>(Board.class),"%" + keyword + "%");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

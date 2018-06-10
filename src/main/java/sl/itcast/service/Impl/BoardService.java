@@ -50,6 +50,6 @@ public class BoardService implements IBoardServise {
 
     @Override
     public List<Board> query(String keyword) {
-        return null;
+        return boardDao.query(keyword);
     }
 }

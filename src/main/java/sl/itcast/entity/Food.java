@@ -1,5 +1,8 @@
 package sl.itcast.entity;
 
+/**
+ * @author 舒露
+ */
 public class Food {
 
     private String id;

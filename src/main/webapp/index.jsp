@@ -9,7 +9,8 @@
 <html>
 <head>
     <title>Title</title>
-    <meta http-equiv="refresh" content="0; url='/sys/index.jsp'">
+    <%--<meta http-equiv="refresh" content="0; url='/sys/index.jsp'">--%>
+    <meta http-equiv="refresh" content="0; url='/MenuServlet">
 </head>
 <body>
 </body>
