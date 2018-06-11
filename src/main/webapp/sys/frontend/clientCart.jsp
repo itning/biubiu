@@ -1,31 +1,52 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page import="sl.itcast.entity.Food" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style/css/index.css"/>
-    <script type="text/javascript">
-        /** // 删除菜品项
-         function removeSorder(node) {
+    <link rel="stylesheet" type="text/css" href="/sys/frontendStyle/css/index.css"/>
+
+</head>
+
+<body style="text-align: center">
+<script src="http://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript">
+    /** // 删除菜品项
+     function removeSorder(node) {
 			var gid = node.lang;
 			window.location.href = "/wirelessplatform/sorder.html?method=removeSorder&gid="+gid;
 		}
 
-         // 修改菜品项数量
-         function alterSorder(node) {
+     // 修改菜品项数量
+     function alterSorder(node) {
 			var snumber = node.value;
 			var gid = node.lang;
 			window.location.href = "/wirelessplatform/sorder.html?method=alterSorder&gid="+gid+"&snumber="+snumber;
 		}
-         */
-        // 下单
-        function genernateOrder() {
-            window.location.href = "clientOrderList.html";
-        }
-    </script>
-</head>
+     */
+    // 下单
+    /*function genernateOrder() {
+        window.location.href = "clientOrderList.html";
+    }*/
+    $(function () {
+        sessionStorage.getItem("ids");
 
-<body style="text-align: center">
+        $('.number').blur(function () {
+            var number = $(this).val();
+            var price = $(this).attr("lang");
+            var all = parseFloat(number) * parseFloat(price) ;
+            $($(this).parent().nextAll()[0]).html(all);
+            var id = $(this).attr("alt");
+            sessionStorage.setItem(id,number);
+
+            sessionStorage.setItem("ids",id);
+        });
+    });
+    <%--${'#number'}.focus(function () {
+        ${'#allprice'}.var(${'#number'}*${'price'})
+    })--%>
+</script>
 <div id="all">
     <div id="menu">
         <!-- 餐车div -->
@@ -38,18 +59,19 @@
                     <td align="center" width="20%">小计</td>
                     <td align="center" width="20%">操作</td>
                 </tr>
-                <tr height="60">
-                    <td align="center" width="20%">烤乳猪</td>
-                    <td align="center" width="20%">￥68.0</td>
-                    <td align="center" width="20%">
-                        <input type="text" value="1" size="3" lang="3" onblur="alterSorder(this)"/>
-                    </td>
-                    <td align="center" width="20%">68.0</td>
-                    <td align="center" width="20%">
-                        <input type="button" value="删除" class="btn_next" lang="3" onclick="removeSorder(this)"/>
-                    </td>
-                </tr>
-
+                <c:forEach items="${list}" var="food">
+                    <tr height="60">
+                        <td align="center" width="20%">${food.foodName}</td>
+                        <td align="center" width="20%" class="price">${food.price}</td>
+                        <td align="center" width="20%">
+                            <input type="text" value="1" alt="${food.id}"  size="3" lang="${food.price}" class="number"/>
+                        </td>
+                        <td align="center" width="20%" class="allprice">${food.price}</td>
+                        <td align="center" width="20%">
+                            <input type="button" value="删除" class="btn_next" lang="3"/>
+                        </td>
+                    </tr>
+                </c:forEach>
                 <tr>
                     <td colspan="6" align="right">总计:
                         <span style="font-size:36px;">&yen;&nbsp;68.0</span>
@@ -78,7 +100,7 @@
                 <li class="dish_num"></li>
                 <li>
                     <a href="clientOrderList.html">
-                        <img src="style/images/call2.gif"/>
+                        <img src="/sys/frontendStyle/images/call2.gif"/>
                     </a>
                 </li>
             </ul>
@@ -121,7 +143,7 @@
                     <tr>
                         <td>
                             <a href="#">
-                                <img src="style/images/look.gif"/>
+                                <img src="/sys/frontendStyle/images/look.gif"/>
                             </a>
                         </td>
                     </tr>
